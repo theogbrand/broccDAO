@@ -227,9 +227,9 @@ const App = () => {
         // Set claim state.
         setHasClaimedNFT(true);
         // Show user their fancy new NFT!
-        // console.log(
-        //   `🌊 Successfully Minted! Check it our on OpenSea: https://testnets.opensea.io/assets/${bundleDropModule.address.toLowerCase()}/0`
-        // );
+        console.log(
+          `🌊 Successfully Minted! Check it our on OpenSea: https://testnets.opensea.io/assets/${bundleDropModule.address.toLowerCase()}/0`
+        );
       })
       .catch((err) => {
         console.error('failed to claim', err);
