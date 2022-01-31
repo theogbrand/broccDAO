@@ -27,7 +27,7 @@ const voteModule = sdk.getVoteModule(
 
 const App = () => {
   const { connectWallet, address, error, provider } = useWeb3();
-  console.log('👋 Address:', address);
+  // console.log('👋 Address:', address);
 
   // The signer is required to sign transactions on the blockchain.
   // Without it we can only read data, not write.
@@ -58,7 +58,7 @@ const App = () => {
       .then((proposals) => {
         // Set state!
         setProposals(proposals);
-        console.log('🌈 Proposals:', proposals);
+        // console.log('🌈 Proposals:', proposals);
       })
       .catch((err) => {
         console.error('failed to get proposals', err);
@@ -83,9 +83,9 @@ const App = () => {
       .then((hasVoted) => {
         setHasVoted(hasVoted);
         if (hasVoted) {
-          console.log('🥵 User has already voted');
+          // console.log('🥵 User has already voted');
         } else {
-          console.log('🙂 User has not voted yet');
+          // console.log('🙂 User has not voted yet');
         }
       })
       .catch((err) => {
@@ -110,7 +110,7 @@ const App = () => {
     bundleDropModule
       .getAllClaimerAddresses('0')
       .then((addresses) => {
-        console.log('🚀 Members addresses', addresses);
+        // console.log('🚀 Members addresses', addresses);
 
         // update member address state
         setMemberAddresses(addresses);
@@ -130,7 +130,7 @@ const App = () => {
     tokenModule
       .getAllHolderBalances()
       .then((amounts) => {
-        console.log('👜 Amounts', amounts);
+        // console.log('👜 Amounts', amounts);
 
         // update member token state
         setMemberTokenAmounts(amounts);
@@ -180,10 +180,10 @@ const App = () => {
           // If balance is greater than 0, they have our NFT!
           if (balance.gt(0)) {
             setHasClaimedNFT(true);
-            console.log('🌟 this user has a membership NFT!');
+            // console.log('🌟 this user has a membership NFT!');
           } else {
             setHasClaimedNFT(false);
-            console.log("😭 this user doesn't have a membership NFT.");
+            // console.log("😭 this user doesn't have a membership NFT.");
           }
         })
         .catch((error) => {
@@ -227,9 +227,9 @@ const App = () => {
         // Set claim state.
         setHasClaimedNFT(true);
         // Show user their fancy new NFT!
-        console.log(
-          `🌊 Successfully Minted! Check it our on OpenSea: https://testnets.opensea.io/assets/${bundleDropModule.address.toLowerCase()}/0`
-        );
+        // console.log(
+        //   `🌊 Successfully Minted! Check it our on OpenSea: https://testnets.opensea.io/assets/${bundleDropModule.address.toLowerCase()}/0`
+        // );
       })
       .catch((err) => {
         console.error('failed to claim', err);
@@ -343,7 +343,7 @@ const App = () => {
                       // if we get here that means we successfully voted, so let's set the "hasVoted" state to true
                       setHasVoted(true);
                       // and log out a success message
-                      console.log('successfully voted');
+                      // console.log('successfully voted');
                     } catch (err) {
                       console.error('failed to execute votes', err);
                     }
